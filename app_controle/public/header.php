@@ -45,8 +45,10 @@
                         Cadastro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/index.php">Opção 1</a>
-                        <a class="dropdown-item" href="/outra_opcao.php">Opção 2</a>
+                        <a class="dropdown-item" href="/index.php">Tipo de Produto</a>
+                        <a class="dropdown-item" href="/outra_opcao.php">Tamanho</a>
+                        <a class="dropdown-item" href="/outra_opcao.php">Cor</a>
+                        <a class="dropdown-item" href="/outra_opcao.php">Cliente</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -64,5 +66,10 @@
             </div>
         </div>
     </nav>
+    <script>
+    $(document).ready(function() {
+        $('.dropdown-toggle').dropdown();
+    });
+    </script>
 </body>
 </html>
