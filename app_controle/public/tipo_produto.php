@@ -17,6 +17,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Data dt_cadastro</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -24,16 +25,16 @@
                 <?php
                 require_once '../app/config/db_con.php';
 
-                $stmt = $pdo->query('SELECT id, descricao FROM low_profile.tipo_produto');
+                $stmt = $pdo->query('SELECT id, descricao, dt_cadastro FROM low_profile.tipo_produto');
                 while ($produto = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '<tr>';
                     echo '<td>' . htmlspecialchars($produto['id']) . '</td>';
                     echo '<td>' . htmlspecialchars($produto['descricao']) . '</td>';
+                    echo '<td>' . htmlspecialchars($produto['dt_cadastro']) . '</td>';
                     echo '<td>';
                     echo '<div class="dropdown">';
                     echo '<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ações</button>';
                     echo '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
-                    echo '<a class="dropdown-item" href="/produto?id=' . $produto['id'] . '">Detalhar <i class="fa-solid fa-eye"></i></a>';
                     echo '<a href="/update/' . $produto['id'] . '" class="dropdown-item edit" data-toggle="modal" data-target="#modaledit' . $produto['id'] . '">Editar <i class="fa-solid fa-pen-to-square"></i></a>';
                     echo '<a href="/delete/' . $produto['id'] . '" class="dropdown-item delete" onclick="return confirm(\'Você tem certeza que deseja deletar? registros serão perdidos!\')">Deletar <i class="fa-solid fa-trash"></i></a>';
                     echo '</div>';
@@ -59,7 +60,7 @@
                     <form action="add_product.php" method="POST">
                         <div class="form-group">
                             <label for="nome">Nome:</label>
-                            <input type="text" name="nome" class="form-control" required>
+                            <input type="text" name="nome" id="nome" class="form-control" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </form>
