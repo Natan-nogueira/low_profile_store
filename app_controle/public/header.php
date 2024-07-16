@@ -45,10 +45,11 @@
                         Cadastro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/index.php">Tipo de Produto</a>
+                        <a class="dropdown-item" href="../public/tipo_produto.php">Tipo de Produto</a>
                         <a class="dropdown-item" href="/outra_opcao.php">Tamanho</a>
                         <a class="dropdown-item" href="/outra_opcao.php">Cor</a>
                         <a class="dropdown-item" href="/outra_opcao.php">Cliente</a>
+                        <a class="dropdown-item" href="/outra_opcao.php">Usuários</a>
                     </div>
                 </li>
                 <li class="nav-item">
